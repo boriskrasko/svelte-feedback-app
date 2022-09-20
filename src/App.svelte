@@ -28,8 +28,12 @@
 			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo doloremque tenetur eaque voluptates voluptatem quibusdam neque, commodi nam vitae. Est placeat neque, vero facere perspiciatis vitae praesentium voluptates nulla? Veritatis!'
 		},
 	]
+	const deleteFeedback = (e) => {
+		let itemId = e.detail;
+		feedback = feedback.filter(item => item.id !== itemId)
+	}
 </script>
 
 <main>
-	<FeedbackList {feedback} />
+	<FeedbackList {feedback} on:delete-feedback={deleteFeedback} />
 </main>
